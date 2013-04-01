@@ -1276,18 +1276,10 @@ position: relative;
         float: left;
         width: 9000px;
         list-style: none;
-		overflow: hidden;
-		display: inline;
       }
         .ad-gallery .ad-thumbs li {
           float: left;
           padding-right: 5px;
-		  overflow: hidden;
-		  display: inline;
-        }
-
-        .ad-gallery .ad-thumbs ul{
-          display: inline;
         }
           .ad-gallery .ad-thumbs li a {
             display: block;
@@ -2592,16 +2584,11 @@ position: relative;
         width: 9000px;
         list-style: none;
 		overflow: hidden;
-		display: inline;
       }
         .ad-gallery .ad-thumbs li {
           float: left;
           padding-right: 5px;
 		  overflow: hidden;
-        }
-
-        .ad-gallery .ad-thumbs ul {
-          display: inline;
         }
           .ad-gallery .ad-thumbs li a {
             display: block;
