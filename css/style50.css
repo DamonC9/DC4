@@ -1271,7 +1271,6 @@ position: relative;
     .ad-gallery .ad-nav .ad-thumbs {
       overflow: hidden;
       width: 100%;
-      display: inline;
     }
       .ad-gallery .ad-thumbs .ad-thumb-list {
         float: left;

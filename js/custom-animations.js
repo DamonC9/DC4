@@ -487,38 +487,75 @@ function redrawDotNav(){
     $('img.image1').data('ad-title', 'Title through $.data');
     $('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
     $('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');*/
-    var galleries = $('#modal-ui-1').adGallery();
-	 var galleries = $('#modal-ui-2').adGallery();
-      var galleries = $('#modal-concepts-1').adGallery();
-       var galleries = $('#modal-concepts-2').adGallery();
-        var galleries = $('#modal-concepts-3').adGallery();
-         var galleries = $('#modal-print-1').adGallery();
-          var galleries = $('#modal-print-2').adGallery();
-           var galleries = $('#modal-art-1').adGallery();
+	/*var galleriesArr = new Array(); 
+    galleriesArr[0] = $('#modal-ui-1').adGallery();
+	galleriesArr[1] = $('#modal-ui-2').adGallery();
+    galleriesArr[2] = $('#modal-concepts-1').adGallery();
+    galleriesArr[3] = $('#modal-concepts-2').adGallery();
+    galleriesArr[4] = $('#modal-concepts-3').adGallery();
+    galleriesArr[5] = $('#modal-print-1').adGallery();
+    galleriesArr[6] = $('#modal-print-2').adGallery();
+    galleriesArr[0] = $('#modal-art-1').adGallery();
   
+   for (var i = 0; i < 1; i++) {
     $('#switch-effect').change(
       function() {
-        galleries[0].settings.effect = $(this).val();
+        galleriesArr[i][0].settings.effect = $(this).val();
         return false;
       }
     );
     $('#toggle-slideshow').click(
       function() {
-        galleries[0].slideshow.toggle();
+        galleriesArr[i][0].slideshow.toggle();
         return false;
       }
     );
     $('#toggle-description').click(
       function() {
-        if(!galleries[0].settings.description_wrapper) {
-          galleries[0].settings.description_wrapper = $('#descriptions');
+        if(!galleriesArr[i][0].settings.description_wrapper) {
+          galleriesArr[i][0].settings.description_wrapper = $('#descriptions');
         } else {
-          galleries[0].settings.description_wrapper = false;
+          galleriesArr[i][0].settings.description_wrapper = false;
         }
         return false;
       }
     );
+}*/
+  
+ function modalFadeIn()
+ {
+ 	         $("body").addClass('hidden');
+		   var galleriesArr = $(this).adGallery();
+          $('#switch-effect').change(
+		      function() {
+		        galleriesArr[0].settings.effect = $(this).val();
+		        return false;
+		      }
+		    );
+		    $('#toggle-slideshow').click(
+		      function() {
+		        galleriesArr[0].slideshow.toggle();
+		        return false;
+		      }
+		    );
+		    $('#toggle-description').click(
+		      function() {
+		        if(!galleriesArr[0].settings.description_wrapper) {
+		          galleriesArr[0].settings.description_wrapper = $('#descriptions');
+		        } else {
+		          galleriesArr[0].settings.description_wrapper = false;
+		        }
+		        return false;
+		      }
+		    );
+ }   
 
+ function modalFadeOut(){
+
+	      $('.ad-controls', this).empty();
+          $("body").removeClass('hidden');
+
+ }
    
  $(".modal").fadeOut(1);
   $(".modal2").fadeOut(1);
@@ -529,7 +566,7 @@ function redrawDotNav(){
 	$('#ui-1').click( function () {
 		$('html, body').animate({
     		scrollTop:$('#interface').offset().top + 90
-    	}, 500, function() {
+    	  }, 500).promise().done(function() {
 	 	$("body").append("<div id='overlay'></div>");
 	$("#overlay")
       .height(docHeight)
@@ -546,9 +583,7 @@ function redrawDotNav(){
 		 
       });
 		
-	  $("#modal-ui-1").fadeIn("slow" , function () {
-		  $("body").addClass('hidden')
-		  });
+	  $("#modal-ui-1").fadeIn("slow" , modalFadeIn);
 	   });
 	 
 	 $('.gallery-close').click(function () {
@@ -568,9 +603,7 @@ function redrawDotNav(){
 		 'display': 'none'
       });
 	
-	  $("#modal-ui-1").fadeOut("slow" , function () {
-		  $("body").removeClass('hidden')
-		  });
+	  $("#modal-ui-1").fadeOut("slow" , modalFadeOut);
 		 });
 		 });
 	
@@ -578,7 +611,7 @@ function redrawDotNav(){
 	$('#ui-2').click( function () {
 		$('html, body').animate({
     		scrollTop:$('#interface').offset().top + 90
-    	}, 500, function() {
+    	  }, 500).promise().done(function() {
 	 	$("body").append("<div id='overlay'></div>");
 	$("#overlay")
       .height(docHeight)
@@ -595,9 +628,7 @@ function redrawDotNav(){
 		 
       });
 		
-	  $("#modal-ui-2").fadeIn("slow" , function () {
-		  $("body").addClass('hidden')
-		  });
+	  $("#modal-ui-2").fadeIn("slow" , modalFadeIn);
 	   });
 	 
 	 $('.gallery-close').click(function () {
@@ -617,9 +648,7 @@ function redrawDotNav(){
 		 'display': 'none'
       });
 	
-	  $("#modal-ui-2").fadeOut("slow" , function () {
-		  $("body").removeClass('hidden')
-		  });
+	  $("#modal-ui-2").fadeOut("slow" , modalFadeOut);
 		 });
 		 });
 	
@@ -629,7 +658,7 @@ function redrawDotNav(){
     $('#concepts-1').click( function () {
         $('html, body').animate({
             scrollTop:$('#concepts').offset().top + 150
-        }, 500, function() {
+          }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -646,9 +675,7 @@ function redrawDotNav(){
          
       });
         
-      $("#modal-concepts-1").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-concepts-1").fadeIn("slow" , modalFadeIn);
        });
      
      $('.gallery-close').click(function () {
@@ -668,9 +695,7 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-concepts-1").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-concepts-1").fadeOut("slow" , modalFadeOut);
          });
          });
 
@@ -678,7 +703,7 @@ function redrawDotNav(){
     $('#concepts-2').click( function () {
         $('html, body').animate({
             scrollTop:$('#concepts').offset().top + 150
-        }, 500, function() {
+          }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -695,9 +720,7 @@ function redrawDotNav(){
          
       });
         
-      $("#modal-concepts-2").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-concepts-2").fadeIn("slow" , modalFadeIn);
        });
      
      $('.gallery-close').click(function () {
@@ -717,9 +740,7 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-concepts-2").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-concepts-2").fadeOut("slow" , modalFadeOut);
          });
          });
 
@@ -727,7 +748,7 @@ function redrawDotNav(){
     $('#concepts-3').click( function () {
         $('html, body').animate({
             scrollTop:$('#concepts').offset().top + 150
-        }, 500, function() {
+          }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -744,9 +765,7 @@ function redrawDotNav(){
          
       });
         
-      $("#modal-concepts-3").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-concepts-3").fadeIn("slow" , modalFadeIn);
        });
      
      $('.gallery-close').click(function () {
@@ -766,9 +785,7 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-concepts-3").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-concepts-3").fadeOut("slow" , modalFadeOut);
          });
          });
 
@@ -776,7 +793,7 @@ function redrawDotNav(){
     $('#print-1').click( function () {
         $('html, body').animate({
             scrollTop:$('#print').offset().top + 165
-        }, 500, function() {
+          }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -793,9 +810,7 @@ function redrawDotNav(){
          
       });
         
-      $("#modal-print-1").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-print-1").fadeIn("slow" , modalFadeIn);
        });
      
      $('.gallery-close').click(function () {
@@ -815,9 +830,7 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-print-1").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-print-1").fadeOut("slow" , modalFadeOut);
          });
          });
 
@@ -825,7 +838,7 @@ function redrawDotNav(){
     $('#print-2').click( function () {
         $('html, body').animate({
             scrollTop:$('#print').offset().top + 165
-        }, 500, function() {
+          }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -842,9 +855,7 @@ function redrawDotNav(){
          
       });
         
-      $("#modal-print-2").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-print-2").fadeIn("slow" , modalFadeIn);
        });
      
      $('.gallery-close').click(function () {
@@ -864,17 +875,15 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-print-2").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-print-2").fadeOut("slow" , modalFadeOut);
          });
          });
 
 //art-1 click opening modal-art-1
     $('#art-1').click( function () {
-        $('html, body').animate({
+	    $('html, body').animate({
             scrollTop:$('#art').offset().top + 130
-        }, 500, function() {
+        }, 500).promise().done(function() {
         $("body").append("<div id='overlay'></div>");
     $("#overlay")
       .height(docHeight)
@@ -890,10 +899,8 @@ function redrawDotNav(){
          'display': 'block'
          
       });
-        
-      $("#modal-art-1").fadeIn("slow" , function () {
-          $("body").addClass('hidden')
-          });
+      $("#modal-art-1").fadeIn("slow" , modalFadeIn);
+		  
        });
      
      $('.gallery-close').click(function () {
@@ -913,9 +920,7 @@ function redrawDotNav(){
          'display': 'none'
       });
     
-      $("#modal-art-1").fadeOut("slow" , function () {
-          $("body").removeClass('hidden')
-          });
+      $("#modal-art-1").fadeOut("slow" , modalFadeOut);
          });
          });
 
