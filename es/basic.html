@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>jQuery PageSlide Demo</title>
+<!--  The jquery.pageslide.css stylesheet has the class that you'll need on your page -->
+<link rel="stylesheet" type="text/css" href="css/jquery.pageslide.css" />
+<link rel="stylesheet" type="text/css" href="css/style3.css" />
+<style>
+body {
+	background: #f4f4f4;
+	font: 14px/18px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #666;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: none;
+}
+a, a:visited {
+	color: #C30;
+	text-decoration: none;
+	border-bottom: 1px dotted #C30;
+}
+a:hover {
+	color: #900;
+	border-bottom-style: solid;
+}
+p {
+	margin-bottom: 20px;
+}
+#content {
+	width: 940px;
+	padding: 10px;
+	margin: 0 auto;
+}
+#content h1 {
+	color: #333;
+	line-height: 1em;
+}
+#content ul {
+	padding-left: 0;
+	list-style: none;
+}
+#content ul li {
+	margin-bottom: 20px;
+}
+#modal {
+	display: none;
+}
+#modal a {
+	background: #CCC;
+	color: #333;
+	font-weight: bold;
+	padding: 5px 10px;
+	border: none;
+}
+#modal a:hover {
+	background: #aaa;
+}
+pre {
+	border: 1px solid #CCC;
+	background-color: #EEE;
+	color: #333;
+	padding: 10px 20px;
+}
+</style>
+</head>
+<body>
+<div id="content">
+  <div class="toolbar">
+    <div class="resume_btn"> <a href="_secondary.html" id="resume_btn"></a><!-- end #resume_btn --> 
+      <img style="position: relative; top: 15px; left: 5px;" src="images/etch.png" alt=""> <!-- end .resume_btn --></div>
+    <div class="contact_btn"> <img style="position: relative; top: 12px; right: 50px;  float: right;" src="images/etch.png" alt="">
+      <div id="contact_btn"> 
+      </div>
+      <!-- end #contact_btn --> 
+    </div>
+    <!-- end .contact_btn -->
+    <div class="current">
+      <ul>
+        <li class="menu"><a href="#home">Home</a></li>
+        <li class="menu"><a href="#about" >About</a></li>
+        <li class="menu"><a href="#interface">Interface</a></li>
+        <li class="menu"><a href="#animation">Animation</a></li>
+        <li class="menu"><a href="#print">Print</a></li>
+        <li class="menu"><a href="#campaigns">Campaigns</a></li>
+        <li class="menu"><a href="#art">Art</a></li>
+      </ul>
+      
+      <!-- end .nav --></div>
+    
+    <!-- end .toolbar --></div>
+    <div id="blue" style="position: absolute; left: 157px; top: 210px;overflow:hidden;">
+    <h3 style="color: black; background-color:#CF0;  height: 20px; padding: 2px; width: 100%; left: 0; top: 0; ">Web Designer</h3>
+    </div>
+    <div id="red" style="position: absolute; overflow: hidden; left: 157px; top: 210px;">
+    <h3 style="color: white; background-color:red;  height: 20px; padding: 2px; width: 100%; left: 0; top: 0; ">Motion Graphics</h3>
+    </div>
+    
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+  <div id="Stage" class="pw_button"></div>
+</div>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script> 
+<script type="text/javascript" src="js/jquery.js"></script> 
+
+<!-- Lavalamp--> 
+<!--<script type="text/javascript" src="js/jquery-1.2.3.min.js"></script>--> 
+
+<script type="text/javascript" src="js/jquery.lavalamp.min.js"></script> 
+
+<!-- Adobe Edge composition --> 
+<script type="text/javascript" charset="utf-8" src="Power4_edgePreload.js"></script> 
+
+<!-- Pageslide --> 
+<!--<script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>--> 
+<script type="text/javascript" src="js/jquery.pageslide.js"></script> 
+
+<!-- Parallax --> 
+<script src="js/modernizr.custom.37797.js"></script> 
+<!-- Grab Google CDN's jQuery. fall back to local if necessary --> 
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> --> 
+
+<!-- Scroll To --> 
+
+<script type="text/javascript">
+        
+	
+		
+	 $(document).ready(	
+		$(function() {
+            $(".toolbar").lavaLamp({
+                fx: "backout",
+                speed: 700,
+                click: function(event, menuItem) {
+                    return true;
+                }
+            });
+        }));
+		
+		
+		$("#blue").slideDown(2000).delay(5000).slideUp().delay(5000);
+		$("#red").slideUp(1).delay(5000).slideDown('slow');
+
+			
+	
+		
+		$("#resume_btn").pageslide(); 
+		
+		<!--$(function() {
+		<!--	alert("what the hell");
+		<!--});-->
+		
+		redrawDotNav();
+	
+	/* Scroll event handler */
+    $(window).bind('scroll',function(e){
+    	parallaxScroll();
+		redrawDotNav();
+    });
+    
+	/* Next/prev and primary nav btn click handlers */
+	$('a.manned-flight').click(function(){
+    	$('html, body').animate({
+    		scrollTop:0
+    	}, 1000, function() {
+	    	parallaxScroll(); // Callback is required for iOS
+		});
+    	return false;
+	});
+    $('a.frameless-parachute').click(function(){
+    	$('html, body').animate({
+    		scrollTop:$('#frameless-parachute').offset().top
+    	}, 1000, function() {
+	    	parallaxScroll(); // Callback is required for iOS
+		});
+    	return false;
+    });
+    $('a.english-channel').click(function(){
+    	$('html, body').animate({
+    		scrollTop:$('#english-channel').offset().top
+    	}, 1000, function() {
+	    	parallaxScroll(); // Callback is required for iOS
+		});
+    	return false;
+    });
+	$('a.about').click(function(){
+    	$('html, body').animate({
+    		scrollTop:$('#about').offset().top
+    	}, 1000, function() {
+	    	parallaxScroll(); // Callback is required for iOS
+		});
+    	return false;
+    });
+    
+    /* Show/hide dot lav labels on hover */
+    $('nav#primary a').hover(
+    	function () {
+			$(this).prev('h1').show();
+		},
+		function () {
+			$(this).prev('h1').hide();
+		}
+    );
+    
+;
+
+/* Scroll the background layers */
+function parallaxScroll(){
+	var scrolled = $(window).scrollTop();
+	$('#parallax-bg1').css('top',(0-(scrolled*.25))+'px');
+	$('#parallax-bg2').css('top',(0-(scrolled*.5))+'px');
+	$('#parallax-bg3').css('top',(0-(scrolled*.75))+'px');
+}
+
+/* Set navigation dots to an active state as the user scrolls */
+function redrawDotNav(){
+	var section1Top =  0;
+	// The top of each section is offset by half the distance to the previous section.
+	var section2Top =  $('#frameless-parachute').offset().top - (($('#english-channel').offset().top - $('#frameless-parachute').offset().top) / 2);
+	var section3Top =  $('#english-channel').offset().top - (($('#about').offset().top - $('#english-channel').offset().top) / 2);
+	var section4Top =  $('#about').offset().top - (($(document).height() - $('#about').offset().top) / 2);;
+	$('nav#primary a').removeClass('active');
+	if($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top){
+		$('nav#primary a.manned-flight').addClass('active');
+	} else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top){
+		$('nav#primary a.frameless-parachute').addClass('active');
+	} else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top){
+		$('nav#primary a.english-channel').addClass('active');
+	} else if ($(document).scrollTop() >= section4Top){
+		$('nav#primary a.about').addClass('active');
+	}
+	
+}
+
+		
+    </script>
+</body>
+</html>

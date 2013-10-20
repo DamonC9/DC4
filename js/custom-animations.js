@@ -194,8 +194,8 @@ function(){
 	
 	//Activation for HTML5 player in animation section
      $("#osmplayer").osmplayer({
-          width: '580px',
-          height: '300px',
+          width: '590px',
+          height: '305px',
           playlist: 'playlist.xml'
         });
 		
@@ -431,7 +431,7 @@ function parallaxScroll(){
 	var scrolled = $(window).scrollTop();
 	
 	//About Scrolling
-$('#outer-ring').css('top',(620-(scrolled*.23))+'px');
+    $('#outer-ring').css('top',(620-(scrolled*.23))+'px');
 	$('#middle-ring').css('top',(620-(scrolled*.23))+'px');
 	$('#my-face').css('top',(290-(scrolled*.0))+'px');
 	$('#inner-ring').css('top',(620-(scrolled*.23))+'px');
@@ -450,6 +450,27 @@ $('#outer-ring').css('top',(620-(scrolled*.23))+'px');
     $('#art-box').css('top',(2900-(scrolled*.42))+'px');
 	
 }
+
+var sdegree = 0;
+
+$(window).scroll(function(event, direction) {
+ if (direction === 'down') {
+         sdegree ++ ;
+    sdegree = sdegree + 1 ;
+    var srotate = "rotate(" + sdegree + "deg)";
+    $("#middle-ring,#inner-ring,#outer-ring").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+    } // do this on the way down
+   
+   else {
+       sdegree ++ ;
+    sdegree = sdegree + 1 ;
+    var srotate = "rotate(" + sdegree + "deg)";
+    $("#middle-ring,#inner-ring,#outer-ring").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+ // do this on the way back up through the waypoint
+   }
+   
+
+});
 
 /* Set navigation dots to an active state as the user scrolls */
 function redrawDotNav(){
@@ -562,7 +583,7 @@ function redrawDotNav(){
 
  var docHeight = $(document).height();
 
-	//Ui-2 click opening modal-ui-1
+	//Ui-1 click opening modal-ui-1
 	$('#ui-1').click( function () {
 		$('html, body').animate({
     		scrollTop:$('#interface').offset().top + 90
@@ -651,6 +672,97 @@ function redrawDotNav(){
 	  $("#modal-ui-2").fadeOut("slow" , modalFadeOut);
 		 });
 		 });
+
+   
+ //Ui-3 click opening modal-ui-3
+    $('#ui-3').click( function () {
+        $('html, body').animate({
+            scrollTop:$('#interface').offset().top + 90
+          }, 500).promise().done(function() {
+        $("body").append("<div id='overlay'></div>");
+    $("#overlay")
+      .height(docHeight)
+      .css({
+         'opacity' : 0.8,
+         'position': 'fixed',
+         'top': 0,
+         'left': 0,
+         'background-color': 'black',
+         'width': '100%',
+         'height': '100%',
+         'z-index': 5000,
+         'display': 'block'
+         
+      });
+        
+      $("#modal-ui-3").fadeIn("slow" , modalFadeIn);
+       });
+     
+     $('.gallery-close').click(function () {
+    
+         $("body").remove("#overlay");
+         $("#overlay")
+      .height(docHeight)
+      .css({
+         'opacity' : 0.0,
+         'position': 'fixed',
+         'top': 0,
+         'left': 0,
+         'background-color': 'black',
+         'width': '100%',
+         'height': '100%',
+         'z-index': 5000,
+         'display': 'none'
+      });
+    
+      $("#modal-ui-3").fadeOut("slow" , modalFadeOut);
+         });
+         });
+
+ //Ui-4 click opening modal-ui-4
+    $('#ui-4').click( function () {
+        $('html, body').animate({
+            scrollTop:$('#interface').offset().top + 90
+          }, 500).promise().done(function() {
+        $("body").append("<div id='overlay'></div>");
+    $("#overlay")
+      .height(docHeight)
+      .css({
+         'opacity' : 0.8,
+         'position': 'fixed',
+         'top': 0,
+         'left': 0,
+         'background-color': 'black',
+         'width': '100%',
+         'height': '100%',
+         'z-index': 5000,
+         'display': 'block'
+         
+      });
+        
+      $("#modal-ui-4").fadeIn("slow" , modalFadeIn);
+       });
+     
+     $('.gallery-close').click(function () {
+    
+         $("body").remove("#overlay");
+         $("#overlay")
+      .height(docHeight)
+      .css({
+         'opacity' : 0.0,
+         'position': 'fixed',
+         'top': 0,
+         'left': 0,
+         'background-color': 'black',
+         'width': '100%',
+         'height': '100%',
+         'z-index': 5000,
+         'display': 'none'
+      });
+    
+      $("#modal-ui-4").fadeOut("slow" , modalFadeOut);
+         });
+         });
 	
 
 
@@ -1075,11 +1187,13 @@ function redrawDotNav(){
    function slide() {
 		$("#slide1").slideDown('slow').delay(5000).slideUp('slow').delay(5000);
 		$("#slide2").slideUp(1).delay(6000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
-		$("#slide3").slideUp(1).delay(12000).slideDown('slow').delay(5000).slideUp('slow');
+		$("#slide3").slideUp(1).delay(12000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
 		$("#slide4").slideUp(1).delay(18000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
 		$("#slide5").slideUp(1).delay(24000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
 		$("#slide6").slideUp(1).delay(30000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
-		$("#slide7").slideUp(1).delay(36000).slideDown('slow').delay(5000).slideUp('slow' , slide);
+        $("#slide7").slideUp(1).delay(36000).slideDown('slow').delay(5000).slideUp('slow').delay(5000);
+		$("#slide8").slideUp(1).delay(42000).slideDown('slow').delay(5000).slideUp('slow' , slide);
+
 		}	
 //})(jQuery); 
 			

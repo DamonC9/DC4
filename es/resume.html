@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <style>
+body {
+	font: 14px/18px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #EFEFEF;
+}
+
+@font-face {
+	font-family: 'GeosansLightRegular';
+	src: url('css/geosans/geosanslight-webfont.eot');
+	src: url('css/geosans/geosanslight-webfont.eot?#iefix') format('embedded-opentype'), url('css/geosans/geosanslight-webfont.woff') format('woff'), url('css/geosans/geosanslight-webfont.ttf') format('truetype'), url('css/geosans/geosanslight-webfont.svg#GeosansLightRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+h2 {
+	color: #FFF;
+}
+#something {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+}
+#resume {
+	padding: 15px 10px 15px 10px;
+}
+#skills {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 350px;
+}
+#bottom-half {
+	width: 335px;
+	background-color: #1c1b1b;
+	position: absolute;
+	display: block;
+	height: 87%;
+	padding: 0;
+	margin: 0;
+	left: 0px;
+	top: 100px;
+	overflow: hidden;
+	box-shadow: 1px 1px 6px 1px #000000;
+}
+
+#bottom-half p {font-family: 'GeosansLightRegular'; padding: 3px 0 0 16px;  font-size: 13px; letter-spacing: 1px;}
+
+#side-buttons {
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+#doc_btn {
+	
+	position: relative;
+	width: 90px;
+	height: 46px;
+	background: url(images/doc_sprite2.png) no-repeat 0 0;
+	cursor: pointer;
+	float: right;
+	display: block;
+}
+#doc_btn:hover {
+	background-position: 0 -46px;
+}
+#doc_btn:active {
+	background-position: 0 -92px;
+}
+
+#pdf_btn {
+	
+	position: relative;
+	width: 91px;
+	height: 46px;
+	background: url(images/pdf_sprite2.png) no-repeat 0 0;
+	cursor: pointer;
+	float: right;
+	display: block;
+}
+#pdf_btn:hover {
+	background-position: 0 -46px;
+}
+#pdf_btn:active {
+	background-position: 0 -92px;
+}
+</style>
+    </head>
+    
+<div id="something"> <img src="images/skills_image.png" alt="" width="355px">
+      <div id="bottom-half">
+    <div id="side-buttons">
+          <a href="images/dc_cv1.pdf">
+          <div id="doc_btn">
+          </div>
+      	  </a>
+         <a href="images/dc_resume1.pdf"> <div id="pdf_btn"></div></a>
+        </div>
+    <p>Download Resume / CV <span style="font-size: 20px; padding-right: 10px; float: right;"> >></span></p>
+    <img id="resume" width="310px" src="images/dc_resume1.jpg" alt="Damon Carlstrom Resume"> </div>
+    </div>
+</div>

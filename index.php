@@ -1,7 +1,18 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DC Labs - Damon Carlstrom Creative Portfolio</title>
 <meta property="og:title" content="DC Labs" />
 <meta property="og:type" content="website" />
@@ -10,7 +21,7 @@
 <meta property="og:site_name" content="DC Labs" />
 <meta property="og:description" content="Damon Carlstrom - Creative portfolio of web design, motion graphics, 3d animation, logos, and other graphic design." />
 
-<link href="css/style50.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="templates/default/css/osmplayer_default.css" type="text/css">
 <link rel="stylesheet" href="jquery-ui/mint-choc/jquery-ui-1.8.18.custom.css" type="text/css">
 
@@ -63,7 +74,7 @@ $.html5Loader({
       <ul>
         <li class="menu" id="home-tab"><a href="#home">Home</a></li>
         <li class="menu" id="about-tab"><a href="#about" >About</a></li>
-        <li class="menu" id="interface-tab"><a href="#interface">Interface</a></li>
+        <li class="menu" id="interface-tab"><a href="#interface">Digital</a></li>
         <li class="menu" id="animation-tab"><a href="#animation">Animation</a></li>
         <li class="menu" id="concepts-tab"><a href="#campaigns">Concepts</a></li>
         <li class="menu" id="print-tab"><a href="#print">Print</a></li>
@@ -76,29 +87,32 @@ $.html5Loader({
   <!-- end .toolbar -->
   
   <div class="home_container" id="home">
-    <p id="copyright">Designed &#38; Developed by Damon Carlstrom &#169; 2012</p>
+    <p id="copyright">Designed &#38; Developed by Damon Carlstrom &#169; 2013</p>
     <div id="home_nav">
       <h1>Damon Carlstrom</h1>
       <div id="name_slide">
-        <div id="slide1" style="position: absolute; right: 0px; top: 0px;overflow:hidden;">
+      <div id="slide1" style="position: absolute; right: 0px; top: 0px;overflow:hidden;">
+          <h3 style="color: white; background-color: #614290;">UX Unicorn</h3>
+        </div>
+        <div id="slide2" style="position: absolute; right: 0px; top: 0px;overflow:hidden;">
           <h3 style="color: #7fb1c8; background-color: black;">User-Interface Specialist</h3>
         </div>
-        <div id="slide2" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
+        <div id="slide3" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
           <h3 style="color: black; background-color:#c9fd59;">Motion Graphics Ninja</h3>
         </div>
-        <div id="slide3" style="position: absolute; right: 0px; top: 0px;overflow:hidden;">
+        <div id="slide4" style="position: absolute; right: 0px; top: 0px;overflow:hidden;">
           <h3 style="color: white; background-color: #812d2b;">Self-Made Superhero</h3>
         </div>
-        <div id="slide4" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
-          <h3 style="color: black; background-color: #e1bb5f;">Creative Strategist</h3>
-        </div>
         <div id="slide5" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
-          <h3 style="color: white; background-color: #004695;">OKC Thunder Fan</h3>
+          <h3 style="color: white; background-color:#099;">Adept Developer</h3>
         </div>
         <div id="slide6" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
-          <h3 style="color: white; background-color:#099;">Capable Developer</h3>
+          <h3 style="color: white; background-color: #004695;">OKC Thunder Fan</h3>
         </div>
         <div id="slide7" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
+          <h3 style="color: black; background-color: #e1bb5f;">Creative Strategist</h3>
+        </div>
+        <div id="slide8" class="fltrt" style="position: absolute; overflow: hidden; right: 0px; top: 0px;">
           <h3 style="color: white; background-color:#4b6a50;">Aspiring World Traveler</h3>
         </div>
       </div>
@@ -107,7 +121,7 @@ $.html5Loader({
         <h3 id="nav_resume" class="x_nav"><a href="resume.html">Resume</a></h3>
         <h3 id="nav_contact" class="x_nav"><a href="contact.php">Contact</a></h3>
         <h3 id="nav_about" class="x_nav"><a href="#about" >About</a></h3>
-        <h3 id="nav_interface" class="x_nav"><a href="#interface">Interface</a></h3>
+        <h3 id="nav_interface" class="x_nav"><a href="#interface">Digital</a></h3>
         <h3 id="nav_animation" class="x_nav"><a href="#animation">Animation</a></h3>
        <h3 id="nav_concepts" class="x_nav"><a href="#concepts">Concepts</a></h3>
         <h3 id="nav_print" class="x_nav"><a href="#print">Print</a></h3>

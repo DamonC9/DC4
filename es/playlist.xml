@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+   <trackList>
+      <track>
+         <title>Third Rail Creative</title>
+         
+         <location>http://www.youtube.com/watch?v=u8dPg_lAfbc</location>
+         <!--<location>http://www.youtube.com/watch?v=Bb5pbpSzVW0</location> -->
+		 <!--<location>https://s3.amazonaws.com/dc_videos/3RC_Promo_720.mp4</location>-->
+         <image>images/3rc_snapshot.jpg</image>
+      </track>
+      <track>
+         <title>Dead Space Spores</title>
+         <location>video/dc_spores.mp4</location>
+         <image>images/dc_spore_snapshot.jpg</image>
+      </track>
+      <track>
+         <title>Cali Zoom</title>
+         <location>video/dc_earthzoom.mp4</location>
+         <image>images/dc_earthzoom_snapshot.jpg</image>
+      </track>
+      <track>
+         <title>Glow Immersion</title>
+         <location>video/my_circles.mp4</location>
+         <image>images/dc_circles_snapshot.jpg</image>
+      </track>
+      <track>
+         <title>Text Shatter</title>
+         <location>video/dc_shatterize.mp4</location>
+         <image>images/dc_shatter_snapshot.jpg</image>
+      </track>
+    
+   </trackList>
+</playlist>
